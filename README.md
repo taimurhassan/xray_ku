@@ -16,7 +16,7 @@ This codebase is developed and fully tested on Anaconda with **Python 3.6.10**, 
 2. Import the 'metrics.yaml' and infer the related libraries from the 'requirement.txt' file:
    1. `conda env create -f metrics.yaml`
     
-3. Download the CRC datasets from their respective link, convert the dataset using `datasetConverter.m` script. Place the converted dataset in the `data` folder within project's root directory.
+3. Download the X-ray datasets from their respective link, convert the dataset using `datasetConverter.m` script. Place the converted dataset in the `data` folder within project's root directory.
 
 4. Create an `output` folder within root directory to save proposed framework's output. 
 
@@ -29,7 +29,7 @@ This codebase is developed and fully tested on Anaconda with **Python 3.6.10**, 
 ```
 python scripts/train.py 
 ```
-By default, HoVer-Net is chosen as a backbone detector. If you want to use Faster R-CNN, then please run:
+To use Faster R-CNN as a backbone, then run:
 ```
 python scripts/train.py with prepr_w_tracktor=False
 ```
