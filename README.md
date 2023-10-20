@@ -9,9 +9,12 @@ This codebase is developed and fully tested on Anaconda with **Python 3.6.10**, 
 ## Setup
 
 1. Import the 'cellGraph.yaml' and install the related code dependencies as:
+    1. `conda env create -f cellGraph.yaml`
+    2. `conda activate cellGraph`
+
 2. Import the 'metrics.yaml' and infer the related libraries from the 'requirement.txt' file:
    1. `conda env create -f metrics.yaml`
-
+   
 3. Download the X-ray datasets from their respective link, convert the dataset using `datasetConverter.m` script. Place the converted dataset in the `data` folder within project's root directory.
 
 4. Create an `output` folder within root directory to save proposed framework's output.
@@ -31,6 +34,14 @@ python scripts/train.py with prepr_w_tracktor=False
 ```
 ## Inference
 1. In order to evaluate the proposed framework on the test dataset, please run:
+```
+python scripts/evaluate.py 
+```
+or
+```
+python scripts/evaluate.py with prepr_w_tracktor=False
+```
+2. To compute performance metrics, please activate `metrics.yaml` in a seperate shell, and run:
 ```
 python compute_stats.py --mode=type --pred_dir='pred_dir' --true_dir='true_dir'
 ```
